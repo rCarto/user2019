@@ -1,0 +1,246 @@
+---
+title: "Thematic Maps with cartography"
+author: "Timothée Giraud - CNRS"
+date: "useR 2019 - Toulouse - 2019/07/09"
+output: 
+  ioslides_presentation: 
+    logo: img/logo.png
+    widescreen: yes
+---
+
+
+
+
+
+## Produce publication ready thematic maps
+
+```{r echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics('img/parisdens.png')
+```
+
+
+
+## Standing on the Shoulders of Giants
+
+### Previously:  
+**`sp`** & **`rgeos`**
+
+### Since version 2.0.0:  
+**`sf`**
+
+
+
+## Alternative Solutions
+
+### `ggplot2` (Wickham, 2016) + <small>`ggspatial` (Dunnington, 2018)</small>  
+* A general purpose graphic library
+* Better integration of `sf` objects.
+
+### `tmap` (Tennekes, 2018)  
+* A mapping library with similar functionalities
+* Uses a different grammar (*à la* `ggplot2`)
+* Allows interactive maps
+* Uses more dependancies
+
+
+
+
+
+## Main Features: Symbologies
+
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics('img/symbology.png', dpi=96)
+```
+
+
+## Main Features: Transformations
+
+```{r echo=FALSE,  fig.align='center'}
+knitr::include_graphics('img/trans.png',dpi = 96)
+```
+
+
+## Main Features: Map Layout
+
+```{r echo=FALSE,  fig.align='center'}
+knitr::include_graphics('img/layout.png',dpi = 96)
+```
+
+
+
+# Documentation
+
+##
+
+```{r echo=FALSE, out.width='801px', fig.align='center'}
+knitr::include_graphics('img/cheat_sheet.png')
+```
+
+## 
+
+```{r echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics('img/site.png')
+```
+
+
+# Examples
+
+##
+```{r echo=FALSE, out.width='65%', fig.align='center'}
+knitr::include_graphics('img/Pot30min.png')
+```
+
+##
+<div class="columns-2">
+```{r echo=FALSE, out.width='65%', fig.align='center'}
+knitr::include_graphics('img/Pot30min.png')
+```
+
+
+
+* `osrm`: Get road distances (time) between each municipalities.    
+
+* `SpatialPosition`: Compute gravitationnal accessibility based on road distances.    
+
+* `cartography`: Classify data, color palettes, choropleth map, legend, map layout, figure ratio for export.
+</div>
+
+##
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/dead.png')
+```
+
+
+##
+
+<div class="columns-2">
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/dead.png')
+```
+
+* sf: a lot of tricks
+
+* cartography::propSymolsLayer()
+
+* cartography::layoutLayer()
+</div>
+
+
+##
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/pencil.png')
+```
+
+
+##
+```{r, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
+library(sf)
+library(cartography)
+library(png)
+# import background image
+if (!file.exists("img/background.png")) {
+  githubURL <- "https://raw.githubusercontent.com/gadenbuie/ggpomological/master/inst/images/pomological_background.png"
+  download.file(githubURL, "img/background.png")
+}
+img <- readPNG("img/background.png")
+# import Communes of Martinique (sf dataframe within cartography package)
+mtq <- st_read(system.file("gpkg/mtq.gpkg", package="cartography"), quiet = TRUE)
+# transform communes polygons to (multi)linestrings
+mtq_pencil <- getPencilLayer(mtq, size = 500, lefthanded = F)
+# export the plot
+png("img/pencil.png",  width = 474, height = 577, res = 99, bg=NA)
+# set figure margins and font family
+par( mar = c(0,0,1.2,0))
+# plot the background image
+plot(st_geometry(mtq), col = NA, border = NA)
+rasterImage(img, par()$usr[1], par()$usr[3], par()$usr[2], par()$usr[4])
+# plot the median income
+choroLayer(x = mtq_pencil, var = "MED", method = "equal", nclass = 4, 
+           col = carto.pal("green.pal", 4), lwd = .7, add = TRUE, 
+           legend.pos = "topright", 
+           legend.values.rnd = -2,
+           legend.title.txt = "Median Income (in euros)")
+# communes boundaries
+plot(st_geometry(mtq), lwd = 0.5, border = "grey20", add = TRUE, lty = 3)
+# labels for a few communes
+mtq$LIBGEO <- iconv(mtq$LIBGEO, to="ASCII//TRANSLIT//IGNORE")
+labelLayer(x = mtq[mtq$STATUS != "Simple municipality",], 
+           txt = "LIBGEO", 
+           cex = 0.9, halo = T, r = 0.15)
+# scale bar
+barscale(size = 5,cex = 0.8, lwd = 1)
+# north arrow
+north(pos = "topleft")
+# title, source, author
+layoutLayer(title = "Wealth in Martinique, 2015", 
+            sources = "INSEE, 2016",
+            author = "Timothee Giraud, 2019", 
+            scale = NULL, tabtitle = T, north = FALSE, frame = FALSE)
+dev.off()
+```
+
+
+<div class="columns-2">
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/pencil.png')
+```
+
+
+* cartography::getPencilLayer()
+
+* cartography::choroLayer()
+
+</div>
+
+##
+```{r echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics('img/paristanaka.png')
+```
+
+
+##
+
+<div class="columns-2">
+```{r echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics('img/paristanaka.png')
+```
+
+* `spatstats`: KDE.    
+
+* `tanaka`: Shaded contour lines.    
+
+* `cartography`: Legend, map layout.
+
+</div>
+
+
+##
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics('img/disc.png', dpi=140)
+```
+
+## 
+<div class="columns-2">
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics('img/disc.png', dpi=140)
+```
+
+* cartography::choroLayer()
+
+* cartography::getBorders()
+
+* cartography::discLayer()
+
+</div>
+
+##
+<div class="columns-2">
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics('img/cardlogo.png', dpi=140)
+```
+[https://github.com/riatelab/cartography](https://github.com/riatelab/cartography)
+
+@rgeomatic
+</div>
