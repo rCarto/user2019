@@ -32,7 +32,7 @@ knitr::include_graphics('img/parisdens.png')
 
 ## Alternative Solutions
 
-### `ggplot2` (Wickham, 2016) + <small>`ggspatial` (Dunnington, 2018)</small>  
+### `ggplot2` (Wickham, 2016) <small>+ `ggspatial` (Dunnington, 2018)</small>  
 * A general purpose graphic library
 * Better integration of `sf` objects.
 
@@ -70,17 +70,24 @@ knitr::include_graphics('img/layout.png',dpi = 96)
 
 # Documentation
 
-##
+## A Cheat Sheet
 
-```{r echo=FALSE, out.width='801px', fig.align='center'}
+```{r echo=FALSE, out.width='600px', fig.align='center'}
 knitr::include_graphics('img/cheat_sheet.png')
 ```
 
-## 
+## A Website
 
-```{r echo=FALSE, out.width='75%', fig.align='center'}
+```{r echo=FALSE, out.width='70%', fig.align='center'}
 knitr::include_graphics('img/site.png')
 ```
+
+## A Vignette
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/vignettes.png')
+```
+
 
 
 # Examples
@@ -102,7 +109,13 @@ knitr::include_graphics('img/Pot30min.png')
 
 * `SpatialPosition`: Compute gravitationnal accessibility based on road distances.    
 
-* `cartography`: Classify data, color palettes, choropleth map, legend, map layout, figure ratio for export.
+* `cartography::getBreaks()`: Classify data
+
+* `cartography::carto.pal()`: Use color palettes from the package
+
+* `cartography::choroLayer()`: Plot the choropleth map
+
+* `cartography::getFigDim()`: Find the correct ratio for png export.
 </div>
 
 ##
@@ -120,11 +133,11 @@ knitr::include_graphics('img/dead.png')
 knitr::include_graphics('img/dead.png')
 ```
 
-* sf: a lot of tricks
+* `sf`: a lot geodata matransformations
 
-* cartography::propSymolsLayer()
+* `cartography::propSymolsLayer()`: Display the proportionnal symbols
 
-* cartography::layoutLayer()
+* `cartography::layoutLayer()`: Display the map layout
 </div>
 
 
@@ -188,9 +201,9 @@ knitr::include_graphics('img/pencil.png')
 ```
 
 
-* cartography::getPencilLayer()
+* `cartography::getPencilLayer()`: Transform polygons to hand-drawn polylines
 
-* cartography::choroLayer()
+* `cartography::choroLayer()`: Display a choropleth map
 
 </div>
 
@@ -206,12 +219,17 @@ knitr::include_graphics('img/paristanaka.png')
 ```{r echo=FALSE, out.width='75%', fig.align='center'}
 knitr::include_graphics('img/paristanaka.png')
 ```
+</br>
+</br>
+</br>
 
-* `spatstats`: KDE.    
+* `spatstats`: Compute KDE.    
 
-* `tanaka`: Shaded contour lines.    
+* `tanaka`: Display the shaded contour lines    
 
-* `cartography`: Legend, map layout.
+* `cartography::LegendChoro()`: Plot the Legend
+
+* `cartography::layoutLayer()`: Plot the map layout
 
 </div>
 
@@ -224,23 +242,31 @@ knitr::include_graphics('img/disc.png', dpi=140)
 ## 
 <div class="columns-2">
 ```{r echo=FALSE, fig.align='center'}
-knitr::include_graphics('img/disc.png', dpi=140)
+knitr::include_graphics('img/disc.png')
 ```
 
-* cartography::choroLayer()
+* `cartography::choroLayer()`: Choropleth map
 
-* cartography::getBorders()
+* `cartography::getBorders()`: Extract borders between countries
 
-* cartography::discLayer()
+* `cartography::discLayer()`: Map the discontinuities on borders
+
+* `cartography::layoutLayer()`: Map layout
 
 </div>
 
-##
+## Thank You
 <div class="columns-2">
-```{r echo=FALSE, fig.align='center'}
-knitr::include_graphics('img/cardlogo.png', dpi=140)
+```{r echo=FALSE, fig.align='center', out.width='70%'}
+knitr::include_graphics('img/cardlogo.png')
 ```
-[https://github.com/riatelab/cartography](https://github.com/riatelab/cartography)
 
-@rgeomatic
+
+<img src="img/ghlogo.png" width=50px />[github.com/riatelab/cartography](https://github.com/riatelab/cartography)  
+</br>
+<img src="img/twlogo.png" width=50px />[\@rgeomatic](http://twitter.com/rgeomatic)  
+</br>
+<img src="img/hylogo.png" width=50px />[rgeomatic.hypotheses.org](https://rgeomatic.hypotheses.org/)
+
+
 </div>
