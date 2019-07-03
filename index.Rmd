@@ -4,11 +4,10 @@ author: "Timothée Giraud - CNRS"
 date: "useR 2019 - Toulouse - 2019/07/09"
 output: 
   ioslides_presentation: 
+    css: style.css
     logo: img/logo.png
     widescreen: yes
 ---
-
-
 
 
 
@@ -70,21 +69,21 @@ knitr::include_graphics('img/layout.png',dpi = 96)
 
 # Documentation
 
-## A Cheat Sheet
+## Cheat Sheet
 
-```{r echo=FALSE, out.width='600px', fig.align='center'}
+```{r echo=FALSE, out.width='650px', fig.align='center'}
 knitr::include_graphics('img/cheat_sheet.png')
 ```
 
-## A Website
+## Website
 
-```{r echo=FALSE, out.width='70%', fig.align='center'}
+```{r echo=FALSE, out.width='60%', fig.align='center'}
 knitr::include_graphics('img/site.png')
 ```
 
-## A Vignette
+## Vignette
 
-```{r echo=FALSE, out.width='60%', fig.align='center'}
+```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics('img/vignettes.png')
 ```
 
@@ -99,10 +98,13 @@ knitr::include_graphics('img/Pot30min.png')
 
 ##
 <div class="columns-2">
-```{r echo=FALSE, out.width='65%', fig.align='center'}
+```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics('img/Pot30min.png')
 ```
 
+</br>
+
+</br>
 
 
 * `osrm`: Get road distances (time) between each municipalities.    
@@ -133,7 +135,7 @@ knitr::include_graphics('img/dead.png')
 knitr::include_graphics('img/dead.png')
 ```
 
-* `sf`: a lot geodata matransformations
+* `sf`: a lot geodata transformations
 
 * `cartography::propSymolsLayer()`: Display the proportionnal symbols
 
@@ -216,14 +218,15 @@ knitr::include_graphics('img/paristanaka.png')
 ##
 
 <div class="columns-2">
-```{r echo=FALSE, out.width='75%', fig.align='center'}
+
+```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics('img/paristanaka.png')
 ```
 </br>
 </br>
 </br>
 
-* `spatstats`: Compute KDE.    
+* `spatstats`: Compute KDE  
 
 * `tanaka`: Display the shaded contour lines    
 
@@ -245,7 +248,7 @@ knitr::include_graphics('img/disc.png', dpi=140)
 knitr::include_graphics('img/disc.png')
 ```
 
-* `cartography::choroLayer()`: Choropleth map
+* `cartography::choroLayer()`: Plot a choropleth map
 
 * `cartography::getBorders()`: Extract borders between countries
 
@@ -256,17 +259,16 @@ knitr::include_graphics('img/disc.png')
 </div>
 
 ## Thank You
-<div class="columns-2">
-```{r echo=FALSE, fig.align='center', out.width='70%'}
-knitr::include_graphics('img/cardlogo.png')
-```
+
+### <img src="img/logo.png" width=100px />  [frama.link/cartography](https://frama.link/cartography)  
 
 
-<img src="img/ghlogo.png" width=50px />[github.com/riatelab/cartography](https://github.com/riatelab/cartography)  
 </br>
-<img src="img/twlogo.png" width=50px />[\@rgeomatic](http://twitter.com/rgeomatic)  
+<img src="img/ghlogo.png" width=50px />  [github.com/riatelab/cartography](https://github.com/riatelab/cartography)  
 </br>
-<img src="img/hylogo.png" width=50px />[rgeomatic.hypotheses.org](https://rgeomatic.hypotheses.org/)
+<img src="img/twlogo.png" width=50px />  [\@rgeomatic](http://twitter.com/rgeomatic)  
+</br>
+<img src="img/hylogo.png" width=50px />  [rgeomatic.hypotheses.org](https://rgeomatic.hypotheses.org/)
 
 
 </div>
