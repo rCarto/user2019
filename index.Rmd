@@ -25,25 +25,9 @@ knitr::include_graphics('img/parisdens.png')
 **`sp`** & **`rgeos`**
 
 ### Since version 2.0.0:  
-**`sf`**
-
-
-
-## Alternative Solutions
-
-### `ggplot2` (Wickham, 2016) <small>+ `ggspatial` (Dunnington, 2018)</small>  
-* A general purpose graphic library
-* Better integration of `sf` objects.
-
-### `tmap` (Tennekes, 2018)  
-* A mapping library with similar functionalities
-* Uses a different grammar (*à la* `ggplot2`)
-* Allows interactive maps
-* Uses more dependancies
-
-
-
-
+```{r echo=FALSE}
+knitr::include_graphics('img/sf.gif')
+```
 
 ## Main Features: Symbologies
 
@@ -67,8 +51,6 @@ knitr::include_graphics('img/layout.png',dpi = 96)
 
 
 
-# Documentation
-
 ## Cheat Sheet
 
 ```{r echo=FALSE, out.width='650px', fig.align='center'}
@@ -87,11 +69,55 @@ knitr::include_graphics('img/site.png')
 knitr::include_graphics('img/vignettes.png')
 ```
 
+## Alternative Solutions
+
+### `ggplot2` (Wickham, 2016) <small>+ `ggspatial` (Dunnington, 2018)</small>  
+* A general purpose graphic library
+* Better integration of `sf` objects.
+
+### `tmap` (Tennekes, 2018)  
+* A mapping library with similar functionalities
+* Uses a different grammar (*à la* `ggplot2`)
+* Allows interactive maps
+* Uses more dependancies
 
 
-# Examples
 
-##
+## {.smaller}
+
+<div class="columns-2">
+```{r, message=FALSE, fig.width=5, fig.height=5}
+library(sf)
+library(cartography)
+# path to the geo file embedded in cartography
+path <- system.file("gpkg/mtq.gpkg", 
+                    package = "cartography")
+# import to an sf object
+mtq <- st_read(dsn = path, quiet = TRUE)
+# Set figure margins
+par(mar = c(0,0,1.2,0), bg = "#b5d0d0")
+# Plot the choropleth map
+choroLayer(
+  x = mtq, var = "MED", 
+  method = "equal", nclass = 4, 
+  col = carto.pal(pal1 = "sand.pal", n1 = 4),
+  legend.values.rnd = -2, legend.pos = "left", 
+  legend.title.txt = "Median Income\n(in euros)"
+) 
+# Plot a layout
+layoutLayer(
+  title="Wealth in Martinique, 2015", 
+  author = "T. Giraud, 2019", 
+  sources = "Sources: Insee and IGN - 2018", 
+  scale = 5, north = TRUE,
+  tabtitle = TRUE, frame = FALSE
+)
+```
+
+</div>
+
+
+## 
 ```{r echo=FALSE, out.width='65%', fig.align='center'}
 knitr::include_graphics('img/Pot30min.png')
 ```
