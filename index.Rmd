@@ -1,7 +1,7 @@
 ---
 title: "Thematic Maps with cartography"
 author: "Timothée Giraud - CNRS"
-date: "useR 2019 - Toulouse - 2019/07/09"
+date: "useR! 2019 - Toulouse - 2019/07/09"
 output: 
   ioslides_presentation: 
     css: libs/style.css
