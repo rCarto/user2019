@@ -4,7 +4,7 @@ author: "Timothée Giraud - CNRS"
 date: "useR 2019 - Toulouse - 2019/07/09"
 output: 
   ioslides_presentation: 
-    css: style.css
+    css: libs/style.css
     logo: img/logo.png
     widescreen: yes
 ---
@@ -124,7 +124,7 @@ knitr::include_graphics('img/Pot30min.png')
 
 ##
 <div class="columns-2">
-```{r echo=FALSE, fig.align='center'}
+```{r echo=FALSE, out.width=450,fig.align='center'}
 knitr::include_graphics('img/Pot30min.png')
 ```
 
@@ -152,6 +152,7 @@ knitr::include_graphics('img/Pot30min.png')
 knitr::include_graphics('img/dead.png')
 ```
 
+<font size="1">[riatelab.github.io/MDM](https://riatelab.github.io/MDM/)</font>
 
 ##
 
@@ -163,70 +164,29 @@ knitr::include_graphics('img/dead.png')
 
 * `sf`: a lot geodata transformations
 
-* `cartography::propSymolsLayer()`: Display the proportionnal symbols
+* `cartography::propSymbolsLayer()`: Display the proportional symbols
 
 * `cartography::layoutLayer()`: Display the map layout
 </div>
 
 
+
 ##
-```{r echo=FALSE, out.width='50%', fig.align='center'}
+```{r echo=FALSE, out.width=400, fig.align='center'}
 knitr::include_graphics('img/pencil.png')
 ```
 
+<font size="1">[gist](https://gist.github.com/rCarto/b77c84da0b44de4c7aead4c0235c2968)</font>
+
 
 ##
-```{r, eval=FALSE, echo=FALSE, warning=FALSE, message=FALSE}
-library(sf)
-library(cartography)
-library(png)
-# import background image
-if (!file.exists("img/background.png")) {
-  githubURL <- "https://raw.githubusercontent.com/gadenbuie/ggpomological/master/inst/images/pomological_background.png"
-  download.file(githubURL, "img/background.png")
-}
-img <- readPNG("img/background.png")
-# import Communes of Martinique (sf dataframe within cartography package)
-mtq <- st_read(system.file("gpkg/mtq.gpkg", package="cartography"), quiet = TRUE)
-# transform communes polygons to (multi)linestrings
-mtq_pencil <- getPencilLayer(mtq, size = 500, lefthanded = F)
-# export the plot
-png("img/pencil.png",  width = 474, height = 577, res = 99, bg=NA)
-# set figure margins and font family
-par( mar = c(0,0,1.2,0))
-# plot the background image
-plot(st_geometry(mtq), col = NA, border = NA)
-rasterImage(img, par()$usr[1], par()$usr[3], par()$usr[2], par()$usr[4])
-# plot the median income
-choroLayer(x = mtq_pencil, var = "MED", method = "equal", nclass = 4, 
-           col = carto.pal("green.pal", 4), lwd = .7, add = TRUE, 
-           legend.pos = "topright", 
-           legend.values.rnd = -2,
-           legend.title.txt = "Median Income (in euros)")
-# communes boundaries
-plot(st_geometry(mtq), lwd = 0.5, border = "grey20", add = TRUE, lty = 3)
-# labels for a few communes
-mtq$LIBGEO <- iconv(mtq$LIBGEO, to="ASCII//TRANSLIT//IGNORE")
-labelLayer(x = mtq[mtq$STATUS != "Simple municipality",], 
-           txt = "LIBGEO", 
-           cex = 0.9, halo = T, r = 0.15)
-# scale bar
-barscale(size = 5,cex = 0.8, lwd = 1)
-# north arrow
-north(pos = "topleft")
-# title, source, author
-layoutLayer(title = "Wealth in Martinique, 2015", 
-            sources = "INSEE, 2016",
-            author = "Timothee Giraud, 2019", 
-            scale = NULL, tabtitle = T, north = FALSE, frame = FALSE)
-dev.off()
-```
-
 
 <div class="columns-2">
-```{r echo=FALSE, out.width='50%', fig.align='center'}
+```{r echo=FALSE, out.width=400, fig.align='center'}
 knitr::include_graphics('img/pencil.png')
 ```
+
+
 
 
 * `cartography::getPencilLayer()`: Transform polygons to hand-drawn polylines
@@ -239,6 +199,8 @@ knitr::include_graphics('img/pencil.png')
 ```{r echo=FALSE, out.width='75%', fig.align='center'}
 knitr::include_graphics('img/paristanaka.png')
 ```
+
+<font size="1">[rgeomatic.hypotheses.org](https://rgeomatic.hypotheses.org/1536)</font>
 
 
 ##
@@ -267,10 +229,12 @@ knitr::include_graphics('img/paristanaka.png')
 ```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics('img/disc.png', dpi=140)
 ```
+<font size="1">[gist](https://gist.github.com/rCarto/7e1b86c9a1d5546f26a8d5eed824506c)</font>
+
 
 ## 
 <div class="columns-2">
-```{r echo=FALSE, fig.align='center'}
+```{r echo=FALSE, out.width=450, fig.align='center'}
 knitr::include_graphics('img/disc.png')
 ```
 
@@ -286,7 +250,9 @@ knitr::include_graphics('img/disc.png')
 
 ## Thank You
 
-### <img src="img/logo.png" width=100px />  [frama.link/cartography](https://frama.link/cartography)  
+<!-- ### <img src="img/logo.png" width=100px />  [frama.link/cartography](https://frama.link/cartography)   -->
+
+### <img src="img/pkg.png" width=100px />  [frama.link/cartography](https://frama.link/cartography)
 
 
 </br>
