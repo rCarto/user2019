@@ -118,7 +118,7 @@ layoutLayer(
 
 
 ## 
-```{r echo=FALSE, out.width='65%', fig.align='center'}
+```{r echo=FALSE, out.width='60%', fig.align='center'}
 knitr::include_graphics('img/Pot30min.png')
 ```
 
@@ -142,8 +142,6 @@ knitr::include_graphics('img/Pot30min.png')
 * `cartography::carto.pal()`: Use color palettes from the package
 
 * `cartography::choroLayer()`: Plot the choropleth map
-
-* `cartography::getFigDim()`: Find the correct ratio for png export.
 </div>
 
 ##
