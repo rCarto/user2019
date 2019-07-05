@@ -21,10 +21,12 @@ knitr::include_graphics('img/parisdens.png')
 
 ## Standing on the Shoulders of Giants
 
-### Previously:  
-**`sp`** & **`rgeos`**
+### Initialy built around **`sp`** & **`rgeos`**
 
-### Since version 2.0.0:  
+
+</br>
+
+### Switch to **`sf`** with version 2.0.0 (Sep, 2017):  
 ```{r echo=FALSE}
 knitr::include_graphics('img/sf.gif')
 ```
@@ -71,15 +73,13 @@ knitr::include_graphics('img/vignettes.png')
 
 ## Alternative Solutions
 
-### `ggplot2` (Wickham, 2016) <small>+ `ggspatial` (Dunnington, 2018)</small>  
+### `ggplot2` (Wickham, 2016) <small>+ [`ggspatial`](https://github.com/paleolimbot/ggspatial) (Dunnington, 2018)</small>  
 * A general purpose graphic library
-* Better integration of `sf` objects.
 
-### `tmap` (Tennekes, 2018)  
+### [`tmap`](https://github.com/mtennekes/tmap) (Tennekes, 2018)  
 * A mapping library with similar functionalities
 * Uses a different grammar (*à la* `ggplot2`)
 * Allows interactive maps
-* Uses more dependancies
 
 
 
@@ -133,9 +133,9 @@ knitr::include_graphics('img/Pot30min.png')
 </br>
 
 
-* `osrm`: Get road distances (time) between each municipalities.    
+* [`osrm`](https://github.com/rCarto/osrm): Get road distances (time) between each municipalities.    
 
-* `SpatialPosition`: Compute gravitationnal accessibility based on road distances.    
+* [`SpatialPosition`](https://github.com/Groupe-ElementR/SpatialPosition): Compute gravitationnal accessibility based on road distances.    
 
 * `cartography::getBreaks()`: Classify data
 
@@ -212,9 +212,9 @@ knitr::include_graphics('img/paristanaka.png')
 </br>
 </br>
 
-* `spatstats`: Compute KDE  
+* [`spatstat`](http://spatstat.org/): Compute Kernel Density Estimation  
 
-* `tanaka`: Display the shaded contour lines    
+* [`tanaka`](https://github.com/rCarto/tanaka): Display the shaded contour lines    
 
 * `cartography::LegendChoro()`: Plot the Legend
 
