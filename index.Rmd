@@ -1,6 +1,6 @@
 ---
 title: "Thematic Maps with cartography"
-author: "Timothée Giraud - CNRS"
+author: "Timothée Giraud </br> ![](img/logocnrs.svg)</br>"
 date: "useR! 2019 - Toulouse - 2019/07/09"
 output: 
   ioslides_presentation: 
@@ -21,12 +21,12 @@ knitr::include_graphics('img/parisdens.png')
 
 ## Standing on the Shoulders of Giants
 
-### Initialy built around **`sp`** & **`rgeos`**
+### Initialy based on **`sp`** & **`rgeos`**...
 
 
 </br>
 
-### Switch to **`sf`** with version 2.0.0 (Sep, 2017):  
+### ... and updated to **`sf`** with version 2.0.0 (Sep, 2017)      
 ```{r echo=FALSE}
 knitr::include_graphics('img/sf.gif')
 ```
@@ -160,7 +160,7 @@ knitr::include_graphics('img/dead.png')
 knitr::include_graphics('img/dead.png')
 ```
 
-* `sf`: a lot geodata transformations
+* `sf`: Provide geodata transformations
 
 * `cartography::propSymbolsLayer()`: Display the proportional symbols
 
@@ -189,7 +189,7 @@ knitr::include_graphics('img/pencil.png')
 
 * `cartography::getPencilLayer()`: Transform polygons to hand-drawn polylines
 
-* `cartography::choroLayer()`: Display a choropleth map
+* `cartography::choroLayer()`: Display the choropleth map
 
 </div>
 
@@ -214,11 +214,11 @@ knitr::include_graphics('img/paristanaka.png')
 
 * [`spatstat`](http://spatstat.org/): Compute Kernel Density Estimation  
 
-* [`tanaka`](https://github.com/rCarto/tanaka): Display the shaded contour lines    
+* [`tanaka`](https://github.com/rCarto/tanaka): Display shaded contour lines    
 
-* `cartography::LegendChoro()`: Plot the Legend
+* `cartography::LegendChoro()`: Plots legend
 
-* `cartography::layoutLayer()`: Plot the map layout
+* `cartography::layoutLayer()`: Plots map layout
 
 </div>
 
