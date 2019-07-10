@@ -133,15 +133,15 @@ knitr::include_graphics('img/Pot30min.png')
 </br>
 
 
-* [`osrm`](https://github.com/rCarto/osrm): Get road distances (time) between each municipalities.    
+* [`osrm`](https://github.com/rCarto/osrm): Gets road distances (time) between each municipalities.    
 
-* [`SpatialPosition`](https://github.com/Groupe-ElementR/SpatialPosition): Compute gravitationnal accessibility based on road distances.    
+* [`SpatialPosition`](https://github.com/Groupe-ElementR/SpatialPosition): Computes gravitationnal accessibility based on road distances.    
 
-* `cartography::getBreaks()`: Classify data
+* `cartography::getBreaks()`: Classifies data
 
-* `cartography::carto.pal()`: Use color palettes from the package
+* `cartography::carto.pal()`: Uses color palettes from the package
 
-* `cartography::choroLayer()`: Plot the choropleth map
+* `cartography::choroLayer()`: Plots the choropleth map
 </div>
 
 ##
@@ -160,11 +160,11 @@ knitr::include_graphics('img/dead.png')
 knitr::include_graphics('img/dead.png')
 ```
 
-* `sf`: Provide geodata transformations
+* `sf`: Provides geodata transformations
 
-* `cartography::propSymbolsLayer()`: Display the proportional symbols
+* `cartography::propSymbolsLayer()`: Plots the proportional symbols
 
-* `cartography::layoutLayer()`: Display the map layout
+* `cartography::layoutLayer()`: Plots the map layout
 </div>
 
 
@@ -187,9 +187,9 @@ knitr::include_graphics('img/pencil.png')
 
 
 
-* `cartography::getPencilLayer()`: Transform polygons to hand-drawn polylines
+* `cartography::getPencilLayer()`: Transforms polygons to hand-drawn polylines
 
-* `cartography::choroLayer()`: Display the choropleth map
+* `cartography::choroLayer()`: Plots the choropleth map
 
 </div>
 
@@ -212,9 +212,9 @@ knitr::include_graphics('img/paristanaka.png')
 </br>
 </br>
 
-* [`spatstat`](http://spatstat.org/): Compute Kernel Density Estimation  
+* [`spatstat`](http://spatstat.org/): Computes Kernel Density Estimation  
 
-* [`tanaka`](https://github.com/rCarto/tanaka): Display shaded contour lines    
+* [`tanaka`](https://github.com/rCarto/tanaka): Plots shaded contour lines    
 
 * `cartography::LegendChoro()`: Plots legend
 
@@ -236,13 +236,13 @@ knitr::include_graphics('img/disc.png', dpi=140)
 knitr::include_graphics('img/disc.png')
 ```
 
-* `cartography::choroLayer()`: Plot a choropleth map
+* `cartography::choroLayer()`: Plots the choropleth map
 
 * `cartography::getBorders()`: Extract borders between countries
 
-* `cartography::discLayer()`: Map the discontinuities on borders
+* `cartography::discLayer()`: Plots discontinuities on borders
 
-* `cartography::layoutLayer()`: Map layout
+* `cartography::layoutLayer()`: Plots the map layout
 
 </div>
 
