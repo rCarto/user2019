@@ -194,7 +194,7 @@ knitr::include_graphics('img/pencil.png')
 </div>
 
 ##
-```{r echo=FALSE, out.width='75%', fig.align='center'}
+```{r echo=FALSE, out.width=600, fig.align='center'}
 knitr::include_graphics('img/paristanaka.png')
 ```
 
@@ -205,7 +205,7 @@ knitr::include_graphics('img/paristanaka.png')
 
 <div class="columns-2">
 
-```{r echo=FALSE, fig.align='center'}
+```{r echo=FALSE, fig.align='center', out.width=450}
 knitr::include_graphics('img/paristanaka.png')
 ```
 </br>
@@ -224,8 +224,8 @@ knitr::include_graphics('img/paristanaka.png')
 
 
 ##
-```{r echo=FALSE, fig.align='center'}
-knitr::include_graphics('img/disc.png', dpi=140)
+```{r echo=FALSE, fig.align='center', out.width=600}
+knitr::include_graphics('img/disc.png')
 ```
 <font size="1">[gist](https://gist.github.com/rCarto/7e1b86c9a1d5546f26a8d5eed824506c)</font>
 
