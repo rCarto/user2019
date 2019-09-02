@@ -1,10 +1,15 @@
-# [Thematic Maps with cartography]((https://rcarto.github.io/user2019)) <img src="img/cardlogo.png" align="right" alt="" width="120"/>
+# [Thematic Maps with cartography](https://rcarto.github.io/user2019) <img src="img/cardlogo.png" align="right" alt="" width="120"/>
 
 **Timothée Giraud** - CNRS    
 **[useR! 2019](http://www.user2019.fr/) - Toulouse - 2019/07/09**  
 
+## Slides
+
 [![](img/overview.png)](https://rcarto.github.io/user2019)
 
+## Talk 
+
+[![Youtube video](https://i.ytimg.com/vi/Wf1Zt6MJ6tM/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBwDJkbgwD5L_iHEQKm-8XvxWfwPA)](https://www.youtube.com/watch?v=Wf1Zt6MJ6tM)  
 
 ## Abstract
 The R spatial ecosystem is blooming and dealing with spatial objects and spatial computations has never been so easy. In this context, the `cartography` package aim is to create thematic maps with the visual quality of those designed with classical mapping or GIS tools.  
